@@ -8,7 +8,7 @@
         height: 250px;
         position: relative;
     }
-    #ad img{
+    #ad .images{
         position: absolute;
         top: 0px;
         left: 0px;
@@ -46,13 +46,21 @@
             opacity: 0;
         }
     }
+    #ad.undarken{
+        display: inline-block;
+        background-color: #000;
+    }
+    #ad.darken{
+        display: block;
+        opacity: 0.6;
+    }
     .countdown.animated{
         position: absolute;
         top: 100px;
         left: 125px;
         height: 50px;
         width: 50px;
-        border: 2px darkgray solid;
+        border: 2px #fff solid;
         animation-name: SquaretoCircle;
         animation-duration: 2s;
         animation-fill-mode: forwards;
@@ -82,7 +90,7 @@
         top: 110px;
         left: 135px;
         border-radius: 50%;
-        border: 2px solid darkgray;
+        border: 2px solid #fff;
         z-index: 5;
         color: white;
         font-size: 19px;
@@ -90,7 +98,7 @@
         padding-top: 4px;
         opacity: 0;
     }
-    .one-animated{
+    .three-animated{
         animation-name: one;
         animation-duration:0.66s;
         animation-fill-mode: forwards;
@@ -102,7 +110,7 @@
         animation-fill-mode: forwards;
         animation-delay: 1.2s;
     }
-    .three-animated{
+    .one-animated{
         animation-name: three;
         animation-duration: 0.66s;
         animation-fill-mode: forwards;
@@ -126,20 +134,35 @@
             opacity: 1;
         }
     }
+    #expandable-container{
+        background-color: #000;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #expandable-image{
+        margin: 0 auto;
+        display: block;
+    }
 </style>
 
 </head>
 <body>
-    <div id="ad">
+    <div id="ad" class="undarken">
         
         <div id="countdown" class="countdown"></div>
-        <div id="one" class="circles">1</div>
-        <div id="two" class="circles">2</div>
         <div id="three" class="circles">3</div>
-        <img src="images/1.jpg" />
-        <img src="images/2.jpg" />
-        <img src="images/3.jpg" />
-        <img src="images/4.jpg" />
+        <div id="two" class="circles">2</div>
+        <div id="one" class="circles">1</div>
+
+        <img class="images" src="images/1.jpg" />
+        <img class="images" src="images/2.jpg" />
+        <img class="images" src="images/3.jpg" />
+        <img class="images" src="images/4.jpg" />
+    </div>
+    <div id="expandable-container">
+        <img id="expandable-image" src="images/expandable.jpg" />
     </div>
 </body>
 
