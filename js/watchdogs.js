@@ -28,7 +28,20 @@ window.onload = function() {
         countdown.addEventListener("animationend", openExpandable);
     });
 
-    // remove animation
+    ad.addEventListener('click', () => {
+        if(expandable.style.display != "inline-block"){
+
+            // pause animation on banners
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.animationPlayState = "paused";
+            }
+
+            //open expandable image
+            openExpandable();
+        }
+    });
+
+    // remove animation when mouse doesn't hover or click
     ad.addEventListener('mouseout', () => {
     
         countdown.classList.remove('animated');
@@ -57,11 +70,35 @@ window.onload = function() {
         expandable.style.display  = "inline-block";
         overlay.style.display = "inline-block";
     }
-    overlay.addEventListener('click', () => {
-        expandable.style.display  = "none";
-        overlay.style.display = "none";
-        for (var i = 0; i < images.length; i++) {
-            images[i].style.animationPlayState = "running";
+
+    
+    document.addEventListener('click', function(e){
+
+        //if clicked close button or black overlay, close expandable
+        if(e.target.id == "close-btn" || e.target.id == "expandable-bg-overlay"){
+            expandable.style.display  = "none";
+            overlay.style.display = "none";
+            
+            // run the animation in banner again
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.animationPlayState = "running";
+            }
+        }
+
+        //if clicked banner, open expandable
+        if(e.target.id == "ad"){
+
+            if(expandable.style.display != "inline-block"){
+                
+                //pause banner animation
+                for (var i = 0; i < images.length; i++) {
+                    images[i].style.animationPlayState = "paused";
+                }
+
+                //open expandable image
+                openExpandable();
+            }
         }
     });
+
 }

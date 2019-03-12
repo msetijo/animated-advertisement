@@ -137,8 +137,8 @@
     #expandable-container{
         position: absolute;
         z-index: 1;
-        top: 8%;
-        left: 19vw;
+        top: 12%;
+        left: 18vw;
         display: none;
     }
     #expandable-img-container{
@@ -149,32 +149,41 @@
         right: 0;
     }
     #expandable-img{
-        width: 61vw;
+        width: calc( 300px + 27vw);
     }
     #expandable-content{
         position: relative;
     }
     #expandable-content #menu ul{
-        margin-left: 14vw;
+        margin-left: 10vw;
         font-family: arial;
         margin-top: 30px;
         display: inline-block;
+    }
+    #expandable-content #menu{
+        width: 90%;
+        float: left;
     }
     #expandable-content #menu ul li{
         float: left;
         display: block;
     }
     #expandable-content #menu ul li a{
-        padding: 28px 80px 20px 16px;
+        padding: 28px 50px 8px 14px;
         color: white;
-        font-size: calc(11px + 0.2vw);
+        font-size: calc(9px + 0.2vw);
         text-decoration: none;
     }
     #expandable-content #menu ul li:nth-of-type(1) a{
         background-color:#32c8f4;
     }
+    #expandable-content #close-btn a{
+        width: 10%;
+        display: inline-block;
+        height: 12vh;
+    }
     #expandable-content #dvds{
-        margin: 140px 0 0 230px;
+        margin: 120px 0 0 240px
     }
     #expandable-content #dvds.animated{
         animation-name: dvd;
@@ -188,6 +197,20 @@
         50%{
             transform: scale(1);
         }
+    }
+    #expandable-content #dvds img{
+        width: 30%;
+    }
+    #expandable-content #order-btn a{
+        float: right;
+        margin: 22px 55px 0 0;
+        background-color: #ff0000;
+        color: white;
+        padding: 10px 28px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        font-family: "arial";
     }
     #expandable-bg-overlay{
         position: absolute;
@@ -216,25 +239,32 @@
         <img class="images" src="images/3.jpg" />
         <img class="images" src="images/4.jpg" />
     </div>
-    
     <div id="expandable-container">
         <div id="expandable-img-container">
             <img id="expandable-img" src="images/expandable.gif" />
         </div>
         <div id="expandable-content">
-            <div id="menu">
-                <ul>
-                    <li><a href="#">JOIN</a></li>
-                    <li><a href="#">MEDIA</a></li>
-                    <li><a href="#">INFO</a></li>
-                </ul>
+            <div id="top-content">
+                <div id="menu">
+                    <ul>
+                        <li><a href="#">JOIN</a></li>
+                        <li><a href="#">MEDIA</a></li>
+                        <li><a href="#">INFO</a></li>
+                    </ul>
+                </div>
+                <div id="close-btn"><a href=""></a></div>
             </div>
             <div id="dvds" class="animated">
                 <img src="images/dvd-2.png" />
                 <img src="images/dvd-1.png" />
             </div>
-            <div id="social-media"></div>
-            <div id="order-btn"></div>
+            <div id="social-media">
+                <div id="twitter"></div>
+                <div id="facebook"></div>
+            </div>
+            <div id="order-btn">
+                <a href="http://store.ubi.com/us/game/?pid=56c494ae88a7e300458b4d72&dwvar_56c494ae88a7e300458b4d72_Platform=ps4&edition=Standard&source=detail" target="_blank">PRE-ORDER</a>
+            </div>
         </div>
     </div>
     <div id="expandable-bg-overlay"></div>
