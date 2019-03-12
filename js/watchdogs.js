@@ -9,6 +9,9 @@ window.onload = function() {
     let two = document.getElementById("two");
     let three = document.getElementById("three");
 
+    let overlay = document.getElementById("expandable-bg-overlay");
+    let expandable = document.getElementById("expandable-container");
+
     // play animated
     ad.addEventListener('mouseover', () => {
         countdown.classList.add('animated');
@@ -21,7 +24,9 @@ window.onload = function() {
         for (var i = 0; i < images.length; i++) {
             images[i].style.animationPlayState = "paused";
         }
-    })
+
+        countdown.addEventListener("animationend", openExpandable);
+    });
 
     // remove animation
     ad.addEventListener('mouseout', () => {
@@ -32,10 +37,12 @@ window.onload = function() {
         three.classList.remove("three-animated");
 
         ad.classList.remove("darken");
-        for (var i = 0; i < images.length; i++) {
-            images[i].style.animationPlayState = "running";
-        }
 
+        if(expandable.style.display != "inline-block"){
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.animationPlayState = "running";
+            }
+        }
         setTimeout(() => {
             countdown.classList.add('inactive');
             one.classList.add("inactive");
@@ -44,7 +51,17 @@ window.onload = function() {
             ad.classList.add("undarken");
         }, 5)
 
-    })
+    });
 
-
+    function openExpandable(){
+        expandable.style.display  = "inline-block";
+        overlay.style.display = "inline-block";
+    }
+    overlay.addEventListener('click', () => {
+        expandable.style.display  = "none";
+        overlay.style.display = "none";
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.animationPlayState = "running";
+        }
+    });
 }

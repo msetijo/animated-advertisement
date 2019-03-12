@@ -135,16 +135,71 @@
         }
     }
     #expandable-container{
-        background-color: #000;
+        position: absolute;
+        z-index: 1;
+        top: 8%;
+        left: 19vw;
         display: none;
+    }
+    #expandable-img-container{
         position: absolute;
         top: 0;
         left: 0;
+        bottom: 0;
+        right: 0;
     }
-    #expandable-image{
-        margin: 0 auto;
+    #expandable-img{
+        width: 61vw;
+    }
+    #expandable-content{
+        position: relative;
+    }
+    #expandable-content #menu ul{
+        margin-left: 14vw;
+        font-family: arial;
+        margin-top: 30px;
+        display: inline-block;
+    }
+    #expandable-content #menu ul li{
+        float: left;
         display: block;
     }
+    #expandable-content #menu ul li a{
+        padding: 28px 80px 20px 16px;
+        color: white;
+        font-size: calc(11px + 0.2vw);
+        text-decoration: none;
+    }
+    #expandable-content #menu ul li:nth-of-type(1) a{
+        background-color:#32c8f4;
+    }
+    #expandable-content #dvds{
+        margin: 140px 0 0 230px;
+    }
+    #expandable-content #dvds.animated{
+        animation-name: dvd;
+        animation-iteration-count: infinite;
+        animation-duration: 8s;
+    }
+    @keyframes dvd{
+        30%{
+            transform: scale(1.1);
+        }
+        50%{
+            transform: scale(1);
+        }
+    }
+    #expandable-bg-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #000;
+        opacity: 0.85;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+    
 </style>
 
 </head>
@@ -162,8 +217,26 @@
         <img class="images" src="images/4.jpg" />
     </div>
     <div id="expandable-container">
-        <img id="expandable-image" src="images/expandable.jpg" />
+        <div id="expandable-img-container">
+            <img id="expandable-img" src="images/expandable.gif" />
+        </div>
+        <div id="expandable-content">
+            <div id="menu">
+                <ul>
+                    <li><a href="#">JOIN</a></li>
+                    <li><a href="#">MEDIA</a></li>
+                    <li><a href="#">INFO</a></li>
+                </ul>
+            </div>
+            <div id="dvds" class="animated">
+                <img src="images/dvd-2.png" />
+                <img src="images/dvd-1.png" />
+            </div>
+            <div id="social-media"></div>
+            <div id="order-btn"></div>
+        </div>
     </div>
+    <div id="expandable-bg-overlay"></div>
 </body>
 
 </html>
