@@ -1,0 +1,460 @@
+@media (min-width: 300px){
+
+    #ad{
+        width: 300px;
+        height: 250px;
+        position: relative;
+    }
+    #ad .images{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        animation-name: fade;
+        animation-iteration-count: infinite;
+        animation-duration: 12s;
+        opacity: 0;
+    }
+    #ad img:nth-of-type(1){
+        animation-delay: 0s;
+    }
+    #ad img:nth-of-type(2){
+        animation-delay: 3s;
+    }
+    #ad img:nth-of-type(3){
+        animation-delay: 6s;
+    }
+    #ad img:nth-of-type(4){
+        animation-delay: 9s;
+    }
+    @keyframes fade{
+        0%{
+            opacity: 0;
+        }
+        8.33%{
+            opacity: 1;
+        }
+        24.99%{
+            opacity: 1;
+        }
+        33.32%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    #ad.undarken{
+        background-color: #000;
+    }
+    #ad.darken{
+        opacity: 0.6;
+    }
+    #ad:hover .countdown.animated{
+        position: absolute;
+        top: 100px;
+        left: 125px;
+        height: 50px;
+        width: 50px;
+        border: 2px #fff solid;
+        animation-name: SquaretoCircle;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        z-index: 3;
+    }
+    @keyframes SquaretoCircle{
+        10%{
+            transform: scale(1.3);
+        }
+        40%{
+            border-radius: 25px 0 0 0;
+        }
+        60%{
+            border-radius: 25px 0 25px 0;
+        }
+        80%{
+            border-radius: 25px 25px 25px 0;
+        }
+        100%{
+            border-radius: 25px;
+        }
+    }
+    .circles{
+        position: absolute;
+        height: 26px;
+        width: 30px;
+        top: 110px;
+        left: 135px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        color: white;
+        font-size: 19px;
+        text-align: center;
+        padding-top: 4px;
+        opacity: 0;
+    }
+    #ad:hover .three-animated{
+        animation-name: one;
+        animation-duration:0.66s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.33s;
+    }
+    #ad:hover .two-animated{
+        animation-name: two;
+        animation-duration: 0.66s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.2s;
+    }
+    #ad:hover .one-animated{
+        animation-name: three;
+        animation-duration: 0.66s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.6s;
+    }
+    @keyframes one{
+        100%{
+            transform: translate(0, -46px);
+            opacity: 1;
+        }
+    }
+    @keyframes two{
+        100%{
+            transform: translate(36px, 30px);
+            opacity: 1;
+        }
+    }
+    @keyframes three{
+        100%{
+            transform: translate(-36px, 30px);
+            opacity: 1;
+        }
+    }
+    #expandable-container{
+        position: relative;
+        z-index: 1;
+        left: 5%;
+        display: none;
+        width: 96%;
+    }
+    #expandable-img-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    #expandable-img{
+        width: 88vw;
+        display: block;
+    }
+    #expandable-content{
+        position: relative;
+        display: block;
+    }
+    #expandable-content #top-content{
+        height: 4vh;
+        display: inline-block;
+        width: 100%;
+    }
+    #expandable-content #menu{
+        width: 59%;
+        margin: 0 0 0 26%;
+        display: inline-block;
+    }
+    #expandable-content #menu ul{
+        font-family: arial;
+        display: inline-block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #expandable-content #menu ul li{
+        float: left;
+        display: block;
+    }
+    #expandable-content #menu ul li a{
+        padding: 40px 80px 14px 12px;
+        color: white;
+        font-size: calc(10px + 0.2vw);
+        text-decoration: none;
+        display: inline-block;
+    }
+    #expandable-content #menu ul li:nth-of-type(1) a{
+        background-color:#32c8f4;
+    }
+    #expandable-content #close-btn-container{
+        width: 7%;
+        display: inline-block;
+        height: 100%;
+    }
+    #expandable-content #close-btn{
+        width: 100%;
+        display: block;
+        height: 100%;
+    }
+    #expandable-content #dvds{
+        margin: 17% 0 0 28%;
+        display: inline-block;
+    }
+    #expandable-content #dvds.animated{
+        animation-name: dvd;
+        animation-iteration-count: infinite;
+        animation-duration: 8s;
+    }
+    @keyframes dvd{
+        30%{
+            transform: scale(1.1);
+        }
+        50%{
+            transform: scale(1);
+        }
+    }
+    #expandable-content #dvds img{
+        width: 40%;
+    }
+    #expandable-content #order-btn a{
+        float: right;
+        margin: 3.5% 15% 0 0;
+        background-color: #ff0000;
+        color: white;
+        padding: 10px 28px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        font-family: "arial";
+    }
+    #expandable-bg-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #000;
+        opacity: 0.85;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+}
+
+/*
+
+  #ad{
+        width: 300px;
+        height: 250px;
+        position: relative;
+    }
+    #ad .images{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        animation-name: fade;
+        animation-iteration-count: infinite;
+        animation-duration: 12s;
+        opacity: 0;
+    }
+    #ad img:nth-of-type(1){
+        animation-delay: 0s;
+    }
+    #ad img:nth-of-type(2){
+        animation-delay: 3s;
+    }
+    #ad img:nth-of-type(3){
+        animation-delay: 6s;
+    }
+    #ad img:nth-of-type(4){
+        animation-delay: 9s;
+    }
+    @keyframes fade{
+        0%{
+            opacity: 0;
+        }
+        8.33%{
+            opacity: 1;
+        }
+        24.99%{
+            opacity: 1;
+        }
+        33.32%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+    #ad.undarken{
+        background-color: #000;
+    }
+    #ad.darken{
+        opacity: 0.6;
+    }
+    #ad:hover .countdown.animated{
+        position: absolute;
+        top: 100px;
+        left: 125px;
+        height: 50px;
+        width: 50px;
+        border: 2px #fff solid;
+        animation-name: SquaretoCircle;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        z-index: 3;
+    }
+    @keyframes SquaretoCircle{
+        10%{
+            transform: scale(1.3);
+        }
+        40%{
+            border-radius: 25px 0 0 0;
+        }
+        60%{
+            border-radius: 25px 0 25px 0;
+        }
+        80%{
+            border-radius: 25px 25px 25px 0;
+        }
+        100%{
+            border-radius: 25px;
+        }
+    }
+    .circles{
+        position: absolute;
+        height: 26px;
+        width: 30px;
+        top: 110px;
+        left: 135px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        color: white;
+        font-size: 19px;
+        text-align: center;
+        padding-top: 4px;
+        opacity: 0;
+    }
+    #ad:hover .three-animated{
+        animation-name: one;
+        animation-duration:0.66s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.33s;
+    }
+    #ad:hover .two-animated{
+        animation-name: two;
+        animation-duration: 0.66s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.2s;
+    }
+    #ad:hover .one-animated{
+        animation-name: three;
+        animation-duration: 0.66s;
+        animation-fill-mode: forwards;
+        animation-delay: 1.6s;
+    }
+    @keyframes one{
+        100%{
+            transform: translate(0, -46px);
+            opacity: 1;
+        }
+    }
+    @keyframes two{
+        100%{
+            transform: translate(36px, 30px);
+            opacity: 1;
+        }
+    }
+    @keyframes three{
+        100%{
+            transform: translate(-36px, 30px);
+            opacity: 1;
+        }
+    }
+    #expandable-container{
+        position: relative;
+        z-index: 1;
+        margin-top: -10%;
+        left: 18vw;
+        display: none;
+    }
+    #expandable-img-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    #expandable-img{
+        width: calc( 300px + 27vw);
+    }
+    #expandable-content{
+        position: relative;
+    }
+    #expandable-content #top-content{
+        height: 11vh;
+    }
+    #expandable-content #menu{
+        width: 90%;
+        float: left;
+        height: 100%;
+    }
+    #expandable-content #menu ul{
+        margin: 0 0 0 10vw;
+        font-family: arial;
+        display: inline-block;
+    }
+    #expandable-content #menu ul li{
+        float: left;
+        display: block;
+    }
+    #expandable-content #menu ul li a{
+        padding: 30px 65px 8px 14px;
+        color: white;
+        font-size: calc(9px + 0.2vw);
+        text-decoration: none;
+        display: inline-block;
+    }
+    #expandable-content #menu ul li:nth-of-type(1) a{
+        background-color:#32c8f4;
+    }
+    #expandable-content #close-btn{
+        width: 10%;
+        display: inline-block;
+        height: 12vh;
+    }
+    #expandable-content #dvds{
+        margin: 18vh 0 0 15.5vw;
+    }
+    #expandable-content #dvds.animated{
+        animation-name: dvd;
+        animation-iteration-count: infinite;
+        animation-duration: 8s;
+    }
+    @keyframes dvd{
+        30%{
+            transform: scale(1.1);
+        }
+        50%{
+            transform: scale(1);
+        }
+    }
+    #expandable-content #dvds img{
+        width: 30%;
+    }
+    #expandable-content #order-btn a{
+        float: right;
+        margin: 15px 55px 0 0;
+        background-color: #ff0000;
+        color: white;
+        padding: 10px 28px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        font-family: "arial";
+    }
+    #expandable-bg-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #000;
+        opacity: 0.85;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+
+    */

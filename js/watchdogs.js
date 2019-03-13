@@ -1,19 +1,20 @@
 window.onload = function() {
 
-    let ad = document.getElementById('ad');
-    let images = document.getElementsByClassName("images");
+    var ad = document.getElementById('ad');
+    var images = document.getElementsByClassName("images");
 
-    let countdown = document.getElementById("countdown");
+    var countdown = document.getElementById("countdown");
 
-    let one = document.getElementById("one");
-    let two = document.getElementById("two");
-    let three = document.getElementById("three");
+    var one = document.getElementById("one");
+    var two = document.getElementById("two");
+    var three = document.getElementById("three");
 
-    let overlay = document.getElementById("expandable-bg-overlay");
-    let expandable = document.getElementById("expandable-container");
+    var overlay = document.getElementById("expandable-bg-overlay");
+    var expandable = document.getElementById("expandable-container");
 
-    // play animated
-    ad.addEventListener('mouseover', () => {
+    // play rollover
+    ad.addEventListener('mouseover', function() {
+
         countdown.classList.add('animated');
         one.classList.add("one-animated");
         two.classList.add("two-animated");
@@ -21,6 +22,8 @@ window.onload = function() {
 
         //making it translucent
         ad.classList.add("darken");
+
+        //pause animation
         for (var i = 0; i < images.length; i++) {
             images[i].style.animationPlayState = "paused";
         }
@@ -28,21 +31,9 @@ window.onload = function() {
         countdown.addEventListener("animationend", openExpandable);
     });
 
-    ad.addEventListener('click', () => {
-        if(expandable.style.display != "inline-block"){
 
-            // pause animation on banners
-            for (var i = 0; i < images.length; i++) {
-                images[i].style.animationPlayState = "paused";
-            }
-
-            //open expandable image
-            openExpandable();
-        }
-    });
-
-    // remove animation when mouse doesn't hover or click
-    ad.addEventListener('mouseout', () => {
+    // remove rollover when mouse doesn't hover
+    ad.addEventListener('mouseout', function() {
     
         countdown.classList.remove('animated');
         one.classList.remove("one-animated");
@@ -51,12 +42,14 @@ window.onload = function() {
 
         ad.classList.remove("darken");
 
+        //animation runs again for banner
         if(expandable.style.display != "inline-block"){
             for (var i = 0; i < images.length; i++) {
                 images[i].style.animationPlayState = "running";
             }
         }
-        setTimeout(() => {
+
+        setTimeout(function() {
             countdown.classList.add('inactive');
             one.classList.add("inactive");
 
@@ -67,7 +60,7 @@ window.onload = function() {
     });
 
     function openExpandable(){
-        expandable.style.display  = "inline-block";
+        expandable.style.display  = "block";
         overlay.style.display = "inline-block";
     }
 
@@ -84,21 +77,21 @@ window.onload = function() {
                 images[i].style.animationPlayState = "running";
             }
         }
-
-        //if clicked banner, open expandable
-        if(e.target.id == "ad"){
-
-            if(expandable.style.display != "inline-block"){
-                
-                //pause banner animation
-                for (var i = 0; i < images.length; i++) {
-                    images[i].style.animationPlayState = "paused";
-                }
-
-                //open expandable image
-                openExpandable();
-            }
-        }
+        
     });
 
+    //if clicked banner, open expandable
+
+    ad.addEventListener('click', function() {
+        if(expandable.style.display != "inline-block"){
+
+            // pause animation on banners
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.animationPlayState = "paused";
+            }
+
+            //open expandable image
+            openExpandable();
+        }
+    });
 }
